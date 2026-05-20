@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+<!-- Main Content-->
+{% block content %}
+<div class="container px-4 px-lg-5 mt-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7 text-center">
+
+      <!-- Error Image -->
+      <img src="{{ url_for('static', filename='assets/img/error-bg.jpg') }}"
+           alt="Error page image"
+           class="img-fluid mb-4">
+
+      <!-- Error Message -->
+      <h1 class="display-4 text-danger" >Oops!</h1>
+      <p class="lead">Sorry, something went wrong.</p>
+
+      <!-- Flash Messages (if any) -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <em>{{ message }}</em>
+
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <!-- Back to Home Button -->
+      <a href="{{ url_for('home') }}" class="btn btn-primary mt-3">
+        <i class="fas fa-home"></i> Go Back Home
+      </a>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
