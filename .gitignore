@@ -1,6 +1,17 @@
 .DS_Store
 node_modules/
 .env
-*.log
-
+*.logs
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.zip
+*.tars
+instance/
+venv/
 
