@@ -1,19 +1,22 @@
 # =======================
-# In the terminal use:
-#    pip install -r ./requirements_3.13.txt
+# Install dependencies with:
+#    python3 -m pip install -r requirements.txt
 #
-blinker==1.9.0
+blinker
 Bootstrap-Flask
 click
-colorama==0.4.6
+colorama
 Flask
-Flask-CKEditor==1.0.0
-Flask-SQLAlchemy==3.1.1
+Flask-CKEditor
+Flask-Login
+Flask-SQLAlchemy
+Flask-Toastr
 Flask-WTF
 greenlet
-itsdangerous==2.2.0
+itsdangerous
 MarkupSafe
 SQLAlchemy
 typing_extensions
-WTForms==3.2.1
+WTForms
 Flask-Migrate
+python-dotenv
