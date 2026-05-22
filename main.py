@@ -38,9 +38,10 @@ migrate.init_app(app,db)
 
 @app.before_request
 def enable_foreign_keys():
-    if not getattr(g, 'fk_enabled', False):
-        db.session.execute(db.text("PRAGMA foreign_keys=ON"))
-        g.fk_enabled = True
+    if db.engine.name == 'sqlite':
+        if not getattr(g, 'fk_enabled', False):
+            db.session.execute(db.text("PRAGMA foreign_keys=ON"))
+            g.fk_enabled = True
 #login manager
 login_manager=LoginManager()
 login_manager.init_app(app)
